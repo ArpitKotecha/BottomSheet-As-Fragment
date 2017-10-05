@@ -77,9 +77,12 @@ public class HomeFragment extends Fragment {
 
             @Override
             public void onSlide(@NonNull View bottomSheet, float slideOffset) {
-                Log.d(TAG, "Sliding");
+
                 if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.M) {
-                    buttonLayout.getForeground().setAlpha(99);
+                    int Low = 0;
+                    int High = 150;
+                    Log.d(TAG, "Sliding "+ Math.round(slideOffset*(((High-Low) + Low))));
+                    buttonLayout.getForeground().setAlpha(Math.round(slideOffset*(((High-Low) + Low))));
                 }
             }
         });
